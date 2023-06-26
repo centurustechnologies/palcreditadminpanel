@@ -490,7 +490,7 @@ class _LoginState extends State<Login> {
       )),
       child: Center(
         child: Container(
-          height: height / 1.5,
+          height: height / 1.3,
           width: width / 1.6,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(7),
