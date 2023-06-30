@@ -672,7 +672,7 @@ class _AgentsState extends State<Agents> {
                                           ),
                                         ); // The list of widgets in the list
                                       }
-                                      return SizedBox();
+                                      return const SizedBox();
                                     }));
                               }
                               return const Center(
@@ -708,7 +708,7 @@ class _AgentsState extends State<Agents> {
                     ),
                   ],
                 ),
-                Container(
+                SizedBox(
                   height: 250,
                   width: 300,
                   child: Lottie.asset('assets/dddd.json',
@@ -805,7 +805,7 @@ class _AgentsState extends State<Agents> {
                                       ),
                                     ],
                                   ),
-                                  Container(
+                                  SizedBox(
                                     height: 250,
                                     width: 300,
                                     child: Lottie.asset('assets/dddd.json',

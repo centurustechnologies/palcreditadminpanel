@@ -1,14 +1,10 @@
-import 'admins.dart';
-import 'agentleads.dart';
-import 'agents.dart';
-import 'login.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-
 import 'package:responsive_grid_list/responsive_grid_list.dart';
-import 'package:lottie/lottie.dart';
-
 import 'package:universal_html/html.dart';
+
+import 'admins.dart';
+import 'login.dart';
 
 class Home extends StatefulWidget {
   final String ids;
@@ -60,119 +56,127 @@ class _HomeState extends State<Home> {
         body: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Container(
-              padding: EdgeInsets.symmetric(vertical: 11, horizontal: 19),
-              child: width < 600
-                  ? Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Welcome  ',
-                          style: TextStyle(
-                              color: Colors.black.withOpacity(0.6),
-                              fontSize: 20,
-                              fontWeight: FontWeight.w400),
-                        ),
-                        SizedBox(
-                          width: 6,
-                        ),
-                        Text(
-                          Adminname,
-                          style: const TextStyle(
-                              color: Colors.black,
-                              fontSize: 20,
-                              fontWeight: FontWeight.w600),
-                        ),
-                      ],
-                    )
-                  : Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Welcome  ',
-                          style: TextStyle(
-                              color: Colors.black.withOpacity(0.6),
-                              fontSize: 20,
-                              fontWeight: FontWeight.w400),
-                        ),
-                        SizedBox(
-                          width: 6,
-                        ),
-                        Text(
-                          Adminname,
-                          style: const TextStyle(
-                              color: Colors.black,
-                              fontSize: 20,
-                              fontWeight: FontWeight.w600),
-                        ),
-                      ],
-                    ),
-            ),
-            Row(
-              children: [
-                location == 'ludhiana'
-                    ? Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 19),
-                        child: InkWell(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => Admins()),
-                            );
-                          },
-                          child: Container(
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 11, vertical: 6),
-                            decoration: BoxDecoration(
-                                color: const Color.fromARGB(255, 4, 63, 111),
-                                borderRadius: BorderRadius.circular(8)),
-                            child: const Text(
-                              'Admins',
+        Container(
+          width: MediaQuery.of(context).size.width,
+          color: Colors.grey.shade300,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Container(
+                child: width < 600
+                    ? Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(10),
+                            child: Text(
+                              'Welcome  ',
                               style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.w500),
+                                  color: Colors.black.withOpacity(0.7),
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w400),
                             ),
                           ),
-                        ),
+                          Text(
+                            Adminname,
+                            style: TextStyle(
+                                color: Colors.black.withOpacity(0.7),
+                                fontSize: 16,
+                                fontWeight: FontWeight.w600),
+                          ),
+                        ],
                       )
-                    : SizedBox(
-                        height: 1,
-                        width: 1,
+                    : Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Welcome  ',
+                            style: TextStyle(
+                                color: Colors.black.withOpacity(0.6),
+                                fontSize: 20,
+                                fontWeight: FontWeight.w400),
+                          ),
+                          const SizedBox(
+                            width: 6,
+                          ),
+                          Text(
+                            Adminname,
+                            style: const TextStyle(
+                                color: Colors.black,
+                                fontSize: 20,
+                                fontWeight: FontWeight.w600),
+                          ),
+                        ],
                       ),
-                Padding(
-                  padding: const EdgeInsets.all(19.0),
-                  child: InkWell(
-                    onTap: () {
-                      window.localStorage.remove('userid');
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => const Login()),
-                      );
-                    },
-                    child: Container(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 11, vertical: 6),
-                      decoration: BoxDecoration(
-                          color: const Color.fromARGB(255, 4, 63, 111),
-                          borderRadius: BorderRadius.circular(8)),
-                      child: const Text(
-                        'Log Out',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 15,
-                            fontWeight: FontWeight.w500),
+              ),
+              Row(
+                children: [
+                  location == 'ludhiana'
+                      ? Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 19),
+                          child: InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const Admins()),
+                              );
+                            },
+                            child: Container(
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 11, vertical: 6),
+                              decoration: BoxDecoration(
+                                  color: const Color.fromARGB(255, 4, 63, 111),
+                                  borderRadius: BorderRadius.circular(8)),
+                              child: const Text(
+                                'Admins',
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.w500),
+                              ),
+                            ),
+                          ),
+                        )
+                      : const SizedBox(
+                          height: 1,
+                          width: 1,
+                        ),
+                  Padding(
+                    padding: const EdgeInsets.all(19.0),
+                    child: InkWell(
+                      onTap: () {
+                        window.localStorage.remove('userid');
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const Login()),
+                        );
+                      },
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 11, vertical: 6),
+                        decoration: BoxDecoration(
+                            color: const Color.fromARGB(255, 4, 63, 111),
+                            borderRadius: BorderRadius.circular(8)),
+                        child: const Text(
+                          'Log Out',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 15,
+                              fontWeight: FontWeight.w500),
+                        ),
                       ),
                     ),
                   ),
-                ),
-              ],
-            ),
-          ],
+                ],
+              ),
+            ],
+          ),
+        ),
+        const SizedBox(
+          height: 20,
         ),
         SizedBox(
           height: MediaQuery.of(context).size.width < 1000 ? height - 150 : 170,
@@ -288,7 +292,7 @@ class _HomeState extends State<Home> {
                                 height: 32,
                               ),
                               Text(
-                                'A.G.Financial Services',
+                                'Pal Credits',
                                 style: TextStyle(
                                     color: Colors.white.withOpacity(0.7),
                                     fontSize: 15,

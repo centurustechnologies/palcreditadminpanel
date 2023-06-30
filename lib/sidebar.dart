@@ -36,7 +36,7 @@ class _SidebarXExampleAppState extends State<SidebarXExampleApp> {
     return WillPopScope(
       onWillPop: willPop,
       child: MaterialApp(
-        title: 'AG Financial Admin Pannel',
+        title: 'Pal Credits',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           primaryColor: const Color.fromARGB(255, 4, 63, 111),
@@ -125,14 +125,14 @@ class _ExampleSidebarXState extends State<ExampleSidebarX> {
           borderRadius: BorderRadius.circular(20),
         ),
         hoverColor: const Color.fromARGB(255, 15, 96, 162),
-        textStyle: TextStyle(color: Colors.white.withOpacity(0.7)),
+        textStyle: TextStyle(color: Colors.black.withOpacity(0.7)),
         selectedTextStyle: const TextStyle(color: Colors.white),
         itemTextPadding: const EdgeInsets.only(left: 30),
         selectedItemTextPadding: const EdgeInsets.only(left: 30),
-        itemDecoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
-          border: Border.all(color: const Color.fromARGB(255, 4, 63, 111)),
-        ),
+        // itemDecoration: BoxDecoration(
+        //   borderRadius: BorderRadius.circular(10),
+        //   border: Border.all(color: Colors.black.withOpacity(0.7)),
+        // ),
         selectedItemDecoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
             border: Border.all(
@@ -140,7 +140,7 @@ class _ExampleSidebarXState extends State<ExampleSidebarX> {
             ),
             color: const Color(0xff17D29C)),
         iconTheme: IconThemeData(
-          color: Colors.white.withOpacity(0.7),
+          color: Colors.black.withOpacity(0.7),
           size: 20,
         ),
         selectedIconTheme: const IconThemeData(
@@ -148,27 +148,27 @@ class _ExampleSidebarXState extends State<ExampleSidebarX> {
           size: 20,
         ),
       ),
-      extendedTheme: const SidebarXTheme(
+      extendedTheme: SidebarXTheme(
         width: 200,
         decoration: BoxDecoration(
-          color: Color.fromARGB(255, 4, 63, 111),
+          color: Colors.grey.shade300,
         ),
       ),
       footerDivider: divider,
       headerBuilder: (context, extended) {
         return extended
             ? SizedBox(
-                height: 150,
+                width: 100,
                 child: Image.asset(
                   'assets/logo7.png',
-                  //fit: BoxFit.cover,
+                  fit: BoxFit.cover,
                 ),
               )
             : SizedBox(
                 height: 150,
                 child: Image.asset(
                   'assets/logo8.png',
-                  //fit: BoxFit.cover,
+                  fit: BoxFit.cover,
                 ),
               );
       },
