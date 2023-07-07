@@ -158,7 +158,7 @@ class _ExampleSidebarXState extends State<ExampleSidebarX> {
       headerBuilder: (context, extended) {
         return extended
             ? SizedBox(
-                width: 100,
+                width: 200,
                 child: Image.asset(
                   'assets/logo7.png',
                   fit: BoxFit.cover,
@@ -167,7 +167,7 @@ class _ExampleSidebarXState extends State<ExampleSidebarX> {
             : SizedBox(
                 height: 150,
                 child: Image.asset(
-                  'assets/logo8.png',
+                  'assets/logo7.png',
                   fit: BoxFit.cover,
                 ),
               );
